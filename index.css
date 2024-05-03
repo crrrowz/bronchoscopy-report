@@ -1,0 +1,272 @@
+@font-face {
+    font-family: 'Famba Bold';
+    src: local(''),
+        url('Famba/Famba Bold.ttf') format('ttf'),
+}
+
+body {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    -webkit-print-color-adjust: exact !important;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    justify-content: space-around;
+    width: 100%;
+}
+
+.lung-region {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-content: space-around;
+
+}
+
+.input-region {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-content: space-around;
+}
+
+.lung-img {
+    overflow: hidden;
+    position: relative;
+    background-image: url("Region.png");
+    mix-blend-mode: multiply;
+    height: 600px;
+    width: 600px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    border-color: #fff;
+    outline: none;
+}
+
+.lung-img .text {
+    position: absolute;
+    left: 0;
+    border: 1px solid #000000;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.lung-img .text p {
+    text-align: left;
+    border-bottom: 5px solid red;
+    padding-bottom: 2px;
+
+}
+
+.circle {
+    width: 30px;
+    height: 30px;
+    background: red;
+    -moz-border-radius: 15px;
+    -webkit-border-radius: 15px;
+    border-radius: 15px;
+    position: absolute;
+}
+
+.circle2 {
+    width: 18px;
+    height: 18px;
+    background: red;
+    -moz-border-radius: 9px;
+    -webkit-border-radius: 9px;
+    border-radius: 9px;
+    position: absolute;
+}
+
+.circle2 p {
+    display: flex;
+    position: relative;
+    font-size: 75%;
+    top: -10px;
+    color: #fff;
+    justify-content: center;
+
+}
+
+.circle p {
+    display: flex;
+    position: relative;
+    top: -12px;
+    color: #fff;
+    justify-content: center;
+
+}
+
+@media print {
+    .output-region {
+        position: relative;
+        display: flex !important;
+        width: 100%;
+        margin-top: 160px;
+        margin-bottom: 160px;
+    }
+
+    header,
+    footer {
+        display: flex !important;
+        position: fixed !important;
+        left: 0 !important;
+        width: inherit !important;
+        height: 80px !important;
+
+    }
+
+    .container {
+        display: none !important;
+    }
+}
+
+@page {
+    width: 210mm !important;
+    height: 297mm !important;
+    size: A4;
+    font-family: 'Famba Bold';
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0px 10px 0px 10px;
+}
+
+.output-region {
+    position: relative;
+    display: none;
+}
+
+header {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    border-bottom: 3px #000000 solid;
+    margin-top: 10px;
+    top: 0px;
+}
+
+
+.logo-output {
+    position: relative;
+    width: 70px;
+}
+
+.output-region-n {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    column-gap: 20px;
+    top: -20px;
+}
+
+.output-region-n div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    column-gap: 5px;
+
+}
+
+.output-region-n div p:first-child {
+    font-weight: bold;
+}
+
+.output-region-b {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.output-region-b-input {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    min-width: 500px;
+}
+
+.output-region-b-input div {
+    min-height: 150px;
+}
+
+.input-highlight {
+    position: relative;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #00AFFF;
+    border-radius: 2%;
+    width: 200px;
+    padding: 5px;
+}
+
+.output-region-b-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.photo-output {
+    width: 130px;
+    border: 1px black solid;
+    margin-top: 10px;
+}
+
+.photo-output-main p {
+    background-color: black;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    position: relative;
+    display: block;
+    width: auto;
+    text-align: center;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.output-region-b-img-lung {
+    overflow: hidden;
+    position: relative;
+    background-image: url("Region.png");
+    height: 300px;
+    width: 300px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    /* border: solid #000000; */
+    outline: none;
+}
+
+.output-region-b-photos-lung {
+    position: relative;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    top: -20px;
+}
+
+footer {
+    display: none;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-top: 20px;
+    border-top: 1px #000000 solid;
+    bottom: 0;
+}
