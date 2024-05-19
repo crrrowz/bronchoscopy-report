@@ -1,19 +1,12 @@
 var lung_img = document.getElementById("lung-img");
 var chachtest = document.getElementById("chachtest");
 var output_img_lung = document.getElementById("output-region-b-img-lung");
-var output_region = document.getElementById("output-region");
-var output_region_b_input = document.getElementById("output-region-b-input");
-var output_region_b_photos_lung = document.getElementById("output-region-b-photos-lung");
-
-
+var testt = document.getElementById("testt");
 
 
 var numOFcircle = 1;
 var DBOFcircle = []
-chachtest.addEventListener("click", (e) => {
 
-
-});
 lung_img.addEventListener("dblclick", (e) => {
 
     if (numOFcircle < 100) {
@@ -67,10 +60,6 @@ lung_img.addEventListener("dblclick", (e) => {
             var x = e.offsetX / 2 - 5;
             var y = e.offsetY / 2 - 5;
 
-            // output_img_lung.setAttribute("style", "height:500px;width:500px;");
-
-            // console.log("y:" + y + "  x:" + x)
-
 
             var div = document.createElement("div");
             div.setAttribute("class", "circle2");
@@ -94,6 +83,7 @@ lung_imgDIV = lung_img.lastElementChild
 lung_img.addEventListener("keyup", (e) => {
     if (e.keyCode == 8 && numOFcircle > 1) {
         lung_imgDIV.innerHTML = "";
+        output_img_lung.innerHTML = "";
         numOFcircle = 1;
         DBOFcircle = [];
     }
@@ -101,6 +91,7 @@ lung_img.addEventListener("keyup", (e) => {
 lung_img.addEventListener("contextmenu", (e) => {
     if (numOFcircle > 1) {
         lung_imgDIV.removeChild(lung_imgDIV.lastChild);
+        output_img_lung.removeChild(output_img_lung.lastChild);
         numOFcircle = numOFcircle - 1;
         DBOFcircle = DBOFcircle.splice(-1, 1);
     }
@@ -111,13 +102,5 @@ document.body.addEventListener("contextmenu", (e) => {
 
 
 window.addEventListener("afterprint", (e) => {
-    // if (output_region.offsetHeight > 900) {
-    console.log(output_region_b_input.offsetHeight)
-    console.log(output_region_b_photos_lung.offsetHeight)
-    if (output_region_b_input > output_region_b_photos_lung) {
-
-    }
-
-    // }
-
+    console.log(testt)
 });

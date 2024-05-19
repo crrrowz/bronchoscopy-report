@@ -40,7 +40,7 @@ body {
 .lung-img {
     overflow: hidden;
     position: relative;
-    background-image: url("Region.png");
+    background-image: url("../img/region.png");
     mix-blend-mode: multiply;
     height: 600px;
     width: 600px;
@@ -107,20 +107,18 @@ body {
 
 @media print {
     .output-region {
-        position: relative;
         display: flex !important;
         width: 100%;
-        margin-top: 160px;
-        margin-bottom: 160px;
+        margin-bottom: -160px !important;
     }
 
     header,
     footer {
         display: flex !important;
-        position: fixed !important;
         left: 0 !important;
         width: inherit !important;
         height: 80px !important;
+        z-index: 1 !important;
 
     }
 
@@ -132,26 +130,28 @@ body {
 @page {
     width: 210mm !important;
     height: 297mm !important;
-    size: A4;
+    /* size: A4; */
     font-family: 'Famba Bold';
-    flex-direction: column;
-    justify-content: space-between;
     margin: 0px 10px 0px 10px;
 }
 
 .output-region {
-    position: relative;
     display: none;
+    flex-direction: column;
 }
 
+.footer-space {
+    margin-top: 100px;
+}
+
+
 header {
-    display: none;
+    position: relative;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 20px;
     border-bottom: 3px #000000 solid;
-    margin-top: 10px;
     top: 0px;
 }
 
@@ -162,12 +162,11 @@ header {
 }
 
 .output-region-n {
-    position: relative;
+    position: inherit;
     display: flex;
     flex-flow: row wrap;
     justify-content: flex-start;
     column-gap: 20px;
-    top: -20px;
 }
 
 .output-region-n div {
@@ -198,7 +197,8 @@ header {
 }
 
 .output-region-b-input div {
-    min-height: 150px;
+    margin-top: 30px;
+    page-break-inside: avoid;
 }
 
 .input-highlight {
@@ -212,20 +212,40 @@ header {
     padding: 5px;
 }
 
+.input-info {
+    position: relative;
+    font-size: 14px;
+    font-weight: bold;
+    color: black;
+    display: block;
+    width: 400px;
+    text-align: left;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: normal;
+}
+
 .output-region-b-img {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
 }
 
 
 .photo-output {
+    position: relative;
     width: 130px;
     border: 1px black solid;
-    margin-top: 10px;
 }
 
-.photo-output-main p {
+.output-region-b-photos-lung div {
+    page-break-inside: avoid;
+    margin-top: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.output-region-b-photos-lung div p {
     background-color: black;
     font-size: 18px;
     font-weight: bold;
@@ -237,14 +257,12 @@ header {
     word-break: break-all;
     word-wrap: break-word;
     white-space: normal;
-    margin-top: 0px;
-    margin-bottom: 0px;
 }
 
 .output-region-b-img-lung {
     overflow: hidden;
     position: relative;
-    background-image: url("Region.png");
+    background-image: url("../img/region.png");
     height: 300px;
     width: 300px;
     background-position: center;
@@ -259,11 +277,13 @@ header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
-    top: -20px;
+    column-gap: 35px;
 }
 
+.testt {}
+
 footer {
-    display: none;
+    position: fixed;
     flex-direction: row;
     justify-content: space-between;
     padding-top: 20px;
